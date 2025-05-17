@@ -1,0 +1,15 @@
+# Environment variales
+.env
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+.DS_Store
+
+# IDE/Editor files
+.vscode/
+*.log
+
+users.json
