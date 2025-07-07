@@ -5,7 +5,7 @@ import {
     getFoodProductById,
     updateFoodProduct,
     deleteFoodProduct
-} from '../controllers/foodproduct.controller';
+} from '../controllers/foodProduct.controller';
 
 const router = express.Router();
 

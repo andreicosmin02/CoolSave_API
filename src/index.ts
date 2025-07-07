@@ -1,6 +1,8 @@
 import express from 'express';
 import connectDB from './config/db';
-import foodProductRoutes from './routes/foodproduct.routes';
+import foodProductRoutes from './routes/foodProduct.routes';
+import recipeRoutes from './routes/recipe.routes';
+import sensorRoutes from './routes/sensor.routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +17,9 @@ connectDB()
 app.use(express.json());
 
 app.use('/api', foodProductRoutes);
+app.use('/api/recipe', recipeRoutes);
+
+app.use('/api/sensors', sensorRoutes);
 
 app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'ok' });

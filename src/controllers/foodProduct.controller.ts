@@ -23,7 +23,10 @@ export const createFoodProduct = async (req: Request, res: Response): Promise<an
 // Get all Food Products
 export const getAllFoodProducts = async (req: Request, res: Response): Promise<any> => {
     try {
-        const foodProducts = await FoodProduct.find();
+        const foodProducts = await FoodProduct.find()
+            .sort({ expirationDate: 1 }) // Sort by expirationDate ascending
+            .exec();
+        
         res.status(200).json(foodProducts);
     } catch (error: any) {
         res.status(500).json({
